@@ -1,0 +1,37 @@
+--------------------- Why languages ? ---------------------------
+
+Any applications resides inside hard drive, when you run the applications goes into RAM.
+Applications at a hardware level are just series of 1's & 0's
+Applications are written in high level languages such as C, C++, Python, golang, etc
+Every language has a compile that converts code into series of 1's & 0's
+
+------------------------- Interpreted vs Compiled language ------------------------
+
+- Compiled language (C++, Golang):
+    - There are 3 steps involved, Write the code, Compile the code & Run the code.
+    - Don't get compiled if error in the code.
+- Interpreted language (Javascript, Python) :
+    - There are 2 steps involved, Write the code & Run the code.
+    - Goes line by line
+    - Can run partially.
+
+----------------------------- Why JS >>>> Other languages --------------------------
+
+HTML/CSS/JS are only languages understood by browser.
+Node.js, Javascript used for Backend Development.
+
+------------------------------ Static vs Dynamic ---------------------------------
+
+For static languages, Type of variable is already declared such as int, string etc & assigning value of a different type of variable
+will cause compile error. more strict code
+
+For Dyamic language, a variable can hold any type, but could lead to inconsistencies further as type is unknown 
+resulting in run time error. Can move fast.
+
+------------------------------- Single threaded nature of JS --------------------------
+
+Javascript is always restricted to run on single-thread, thus bad language of scalable systems.
+
+---------------------------------- Callbacks -----------------------------------------
+
+Passing function to a function is Callbacks
