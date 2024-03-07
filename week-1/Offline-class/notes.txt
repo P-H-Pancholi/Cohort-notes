@@ -5,4 +5,4 @@ e.g.
 
 const arr = [1,2,4]
 arr.forEach(func) 
-This will execute func on each element of given arr
+This will execute func on each element of given array
