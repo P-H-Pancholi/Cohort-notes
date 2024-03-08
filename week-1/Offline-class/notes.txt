@@ -14,3 +14,15 @@ Static method : Can be called on class, without instantiating objects
 --------------------------JSON-------------------
 JSON.parse() : converts string to JSON object.
 JSON.stringify() : converts JSON object to string
+
+-----------------------Async func--------------------------
+Examples of async function: setTimeout(), fs.readFile, fetch(fetch data from API endpoint)
+
+Event loop checks callback queue & if there are any async task completed, it gets in call stack.
+callback function makes sense in async function as web api would need to put a function in callback queue. (real use of callbacks).
+
+Promises : syntactic sugar, makes callback more readable
+
+new Promise(function (resolve){}) //resolve will be the callback func that is called through then().
+
+3 stages : pending, resolved, rejected
