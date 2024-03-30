@@ -1,0 +1,11 @@
+------------------------Async function---------------------------
+
+advantages of async functions : I/O operations can happen asynchronously.
+readFile(fileName, func);
+setTimeout(func, timeinms);
+
+-----------------------Promises-------------------------------------
+
+Callback hell : Callback inside callback (ugly syntax, unnecessary indentation )
+
+Promises are syntactic sugar
