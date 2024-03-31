@@ -9,3 +9,31 @@ setTimeout(func, timeinms);
 Callback hell : Callback inside callback (ugly syntax, unnecessary indentation )
 
 Promises are syntactic sugar
+
+------------------------------------------------------------------------
+
+ECMAScript : ECMAScript is a scripting language specification on which javascript is based
+
+Javascript : scripting language that conforms to the ECMAScript specification
+Javascript includes additional feature that are not part of ECMAScript specification (DOM manipulation)
+
+Common JS browser engines:
+    1. V8 used by google chrome/chromium - C
+    2. Spidermonkey used by firefox - C++, Rust
+
+-----------------------------HTTP Server-----------------------------
+
+- Protocol that is defined for machines to communicate.
+- common way for your website's frontend to talk to its backend.
+
+Things need to know for :
+    1. HTTP(client side) : 
+        1. Protocol
+        2. Address
+        3. Route
+        4. Headers, body, query parameter.
+        5. Method.
+    2. HTTP (server side) :
+        1. Response body
+        2. Response Headers.
+        3. Status code.
