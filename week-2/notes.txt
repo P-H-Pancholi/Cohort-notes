@@ -37,3 +37,11 @@ Things need to know for :
         1. Response body
         2. Response Headers.
         3. Status code.
+
+---------------------------Express------------------------------
+
+We cannot access req.body using only express. We have to use bodyparser for accessing request body.
+How to access env variable PORT in node.js ? : process.env.PORT
+
+query_params : parameter in url.
+for acessing query_params : req.query 
