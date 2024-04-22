@@ -45,3 +45,9 @@ How to access env variable PORT in node.js ? : process.env.PORT
 
 query_params : parameter in url.
 for acessing query_params : req.query 
+
+using wildcards we need to specify :
+
+/files/:fileName
+
+we can access it by req.params.fileName
