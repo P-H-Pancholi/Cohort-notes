@@ -1,0 +1,7 @@
+----------------------------------- Middlewares------------------------------
+
+Usecase of Middlewares is to do prechecks
+prechecks consists 2 things authentication & input validation
+
+Middlewares are only functions that get executed after api is called & before the Route handler callback func is executed.
+In route handler function, we can pass as many callbacks as we want, In order to call next callback we need to pass next variable to current callback & call next()
