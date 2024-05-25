@@ -4,4 +4,49 @@ Usecase of Middlewares is to do prechecks
 prechecks consists 2 things authentication & input validation
 
 Middlewares are only functions that get executed after api is called & before the Route handler callback func is executed.
-In route handler function, we can pass as many callbacks as we want, In order to call next callback we need to pass next variable to current callback & call next()
+In route handler function, we can pass as many callbacks as we want, In order to call next callback we need to pass next variable to current callback & call next() 
+
+In order to use body parameter in route handler func we need to specify app.use(express.json())
+
+app.use() : Takes Middleware func as input & executes Middleware func on all routes present without passing the Middleware function in route handler
+
+----------------------------------- exception handling using Middleware (global catches) --------------------------
+
+Declare a Middleware func with 4 inputs (err, res , req, next) define at the end after route handler, it will handle all the exception
+
+
+-------------------------------------- Zod -----------------------------------------
+
+Zod schemas are better way for input validation.
+
+it returns if a input satisfies certain validation or not.
+
+example 1 : to make sure if a params is array of numbers, 
+you need to create schema for that 
+schema = zod.array(zod.numbers)
+then safe parse the input variable
+response = zod.safeParse(req.body.<input_var>)
+response.success is true if validation satisfies otherwise false
+
+example 2: to make sure if input is complex object like this,
+{
+    email : string
+    password: string
+    Country : IN or US
+}
+
+schema = zod.object({
+    email: zod.string().email()
+    password: zod.string().min(8)
+    Country: zod.literal("IN").or(zod.literal("US"))
+})
+
+
+---------------------------------------------------- Authentication -----------------------------------------------------
+
+The way authentication is done in layman's term :
+
+1. Validate the user, if success server return back the token
+2. User stores the token in browser local storage.
+3. Now for every request, token is passed along payload and server verfies the token.
+4. When user logs out token gets deleted
