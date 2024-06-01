@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp</title>
+</head>
+<body>
+    <script>
+        function getNames() {
+            fetch("https://fakerapi.it/api/v1/persons").then(function(response){  //fetch is used to call apis and it returns promise
+                response.json().then(function(finalData) {
+                    console.log(finalData);
+                })
+            })
+        }
+
+        // async await form of getNames() function
+        async function getNamesAsync() {
+            const response = await fetch("https://fakerapi.it/api/v1/persons");
+            const jsonResp = await response.json();
+            console.log(jsonResp)
+        } 
+    </script>
+    <button onclick="getNamesAsync()">Click Me!</button>
+</body>
+</html>

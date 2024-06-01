@@ -50,3 +50,28 @@ The way authentication is done in layman's term :
 2. User stores the token in browser local storage.
 3. Now for every request, token is passed along payload and server verfies the token.
 4. When user logs out token gets deleted
+
+Few Concepts regarding authentication:
+    1. Hashing : Password are hashed before storing into Backend. It is one way, string to hash.
+    2. Encryption : It is two way, str -> hash -> str provided you have a key.
+    3. Json Web Tokens: Takes json as an input and creates a token, you can see input if you have a token.( jwt.io ) . Can only be verified if user has password.
+    4. Local storage: token is stored in local storage when api is fetched or executed in browser
+
+----------------------------------- JWT ---------------------------------------------------------------------------------
+
+To use json web token, we will need jsonwebtoken library, Once auth is success we will provide the json token through sign method by passing jwtpass.
+
+jwt.sign({username: username}, jwtpass);
+
+we will verify the token using verify method :
+
+const token = req.headers.authorization;
+    try{
+        const decoded = jwt.verify(token, jwtpassword);
+    }
+
+if verify throw error we will catch it & return not valid token
+
+------------------------------- mongodb ------------------------------------------------------------------------------------
+
+mongoose lets you connect web server with mongodb db 
