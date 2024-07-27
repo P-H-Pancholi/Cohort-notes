@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    async function populateDiv() {
+        const principal = document.getElementById('principalAmt').value
+        const rate = document.getElementById('rate').value
+        const time = document.getElementById('time').value
+        const response = await fetch("http://localhost:3000/interest?principal=" + principal + "&rate=" + rate + "&time=" + time)
+        const result = await response.json()
+        document.getElementById('result').innerHTML = '<h1> The total amount is ' + result['total'] + ' and calculated interest is ' + result['interest'] + '</h1>'
+    }
+</script>
+<body>
+    <label for="principalAmt">Principal Amount:</label>
+    <input id="principalAmt" placeholder="Principal Amount" type="text">
+    <br><br><br>
+    <label for="rate">Rate of Interest:</label>
+    <input id="rate" placeholder="Rate of Interest" type="text">
+    <br><br><br>
+    <label for="time">Number of Years</label>
+    <input id="time" placeholder="Number of Years" type="text">
+    <br><br><br>
+    <button onclick="populateDiv()">Calculate Interest</button>
+    <br><br><br>
+    <div id="result"></div>
+</body>
+</html>

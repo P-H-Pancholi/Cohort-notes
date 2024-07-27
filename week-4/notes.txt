@@ -1,0 +1,8 @@
+------------------- Document Object Model --------------------------------
+
+- Using class name in html helps in styling the element, It follows DRY principle.
+- If you want to style elements in similar way, using same class helps
+- Why are Ids useful ? What do ids let you do ?
+- Let you access elements via DOM API
+
+Debouncing : don't send out req immediately, if user hasn't typed for 100 ms then send request
