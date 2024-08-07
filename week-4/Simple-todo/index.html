@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="title" placeholder="Title">
+    <br><br><br>
+    <input type="text" id="description" placeholder="Description">
+    <br><br><br>
+    <!-- <button onclick="addTodo()">Add TODO</button> -->
+    <div id="container"></div>
+
+    </div>
+</body>
+
+<script>
+    let globalId = 0;
+    function markAsDone(id) {
+        const element = document.getElementById(id);
+        element.children[2].innerHTML = 'Done';
+        
+    }
+    function createChild(title, description, id) {
+
+        const childDiv = document.createElement("div")
+        
+        const titleDiv = document.createElement("div")
+        titleDiv.innerHTML = title;
+        
+        const descriptionDiv = document.createElement("div")
+        descriptionDiv.innerHTML = description;
+
+        const buttonDiv = document.createElement("button")
+        buttonDiv.innerHTML = 'Mark as done';
+        buttonDiv.setAttribute("onclick", `markAsDone(${id})`)
+
+        childDiv.appendChild(titleDiv);
+        childDiv.appendChild(descriptionDiv);
+        childDiv.appendChild(buttonDiv);
+        childDiv.setAttribute("id", id)
+
+        return childDiv
+
+    }
+    function addTodo() {
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+
+        // const childDiv = document.createElement("div")
+        // const titleDiv = document.createElement("div")
+        // const descriptionDiv = document.createElement("div")
+        // const buttonDiv = document.createElement("button")
+
+        // titleDiv.innerHTML = title;
+        // descriptionDiv.innerHTML = description;
+        // buttonDiv.innerHTML = 'Mark as done';
+
+        // childDiv.appendChild(titleDiv);
+        // childDiv.appendChild(descriptionDiv);
+        // childDiv.appendChild(buttonDiv);
+
+        document.getElementById("container").appendChild(createChild(title, description, globalId++));
+    }
+
+    function addTodoFromState(state) {
+        const parent = document.getElementById("container")
+        parent.innerHTML = ""
+        for(let i = 0; i < state.length; i++) {
+            parent.appendChild(createChild(state[i].title, state[i].description, state[i].id))
+        }
+    }
+
+    window.setInterval(async function() {
+        const res = await fetch('https://sum-server.100xdevs.com/todos')
+        const json = await res.json()
+        addTodoFromState(json.todos)
+    }, 5000)
+</script>
+
+
+</html>

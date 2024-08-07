@@ -6,3 +6,20 @@
 - Let you access elements via DOM API
 
 Debouncing : don't send out req immediately, if user hasn't typed for 100 ms then send request
+
+
+document.getObjectbyId(t) // gets html object with id t
+document.createElement(t) // creates am outer element with tag t
+
+
+---------------------- React Foundations ----------------------------
+
+DOM is not enough to support dynamic websites as no central state.
+
+state : current state of application provided by backend, e.g. The backend sends an array of Todo list & we need to render it to frontend
+
+Way to create a dynamic frontend websites:
+
+1. Update a state variable.
+2. Delegate the task of figuring out diff to a hefty func.   ----> done by react
+3. Tell the hefty func how to add, update & remove element.
