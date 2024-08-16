@@ -1,0 +1,27 @@
+1. Why do we need react ?
+------> For static we don't, 
+for dynamic website, these libs make it easier to do DOM manipulation.
+React is a new syntax that under hood gets converted to html/CSS/JSS
+
+2. React Jargon
+
+State : An object that represents current state of the app. It represents dynamic thing in your app. e.g. value of counter
+
+Component: How a DOM element should render, given a state. It is re-usable, dynamic, HTML snippet that changes given the state.
+The button is a comp. It takes a state(counter) as an input and is supposed to render accordingly.
+
+Re-render : A state change triggers re-render. A re-render represents actual DOM being manipulated when the state changes
+
+Define Component once, change the state, react will take care of rerendering.
+
+
+3. what is jsx file ?
+
+a js file inside which we can write js & xml
+
+4. How does react project is converted to html/js/css ?
+
+Through npm run build, it creates dist folder
+
+5. How to create a react boiler plate app ?
+npm create vite@latest -> framework: React -> variant: Javascript
