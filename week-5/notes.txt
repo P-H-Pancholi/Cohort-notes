@@ -24,4 +24,8 @@ a js file inside which we can write js & xml
 Through npm run build, it creates dist folder
 
 5. How to create a react boiler plate app ?
-npm create vite@latest -> framework: React -> variant: Javascript
+npm create vite@latest -> framework: React -> variant: Javascript.
+
+6. How react keep tracks of state variable & rerendering it to Component ?
+state variable should be initiaized with useState(), it will return current state var & function.
+whenever the state var is updated, need to call function with that var & react will rerender.
