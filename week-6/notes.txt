@@ -1,0 +1,41 @@
+----------------------------------------------------------------------------
+Why does a react component returns a high level parent & not siblings ?
+
+siblings
+<div></div>
+<div></div>
+
+high level parent
+<parent>
+    <child></child>
+    <child></child>
+</parent>
+
+-> It makes easy for reconciliation (changes to DOM)
+
+
+Solution : use <React.Fragment>
+
+-------------------------------------------------------------------------------
+
+In react, re-renders should be minimize as much as possible.
+
+Rerender happens when the state used inside the component changes or parent component re-renders (It will trigger re-render for each child)
+
+So inorder to minimize re-renders, one solution will be push down the state to child components.
+
+Rule of thumb: declare state varibles at lowest common ancesters
+
+Second solution is we can use React.Memo(comp_func), Memo lets you skip rendering a comp if props are unchanged
+
+-----------------------------------
+whenever iterating the array, we need to add key to component, helps react in sorting & re-rendering
+
+Wrapper component : Takes another comp as input (props)
+
+whenever defining a comp, you can take children as input, if that component is called children will contain every thing passed inside the component.
+
+<componet>
+// children 
+<div>I am children of component </div>
+</component>

@@ -7,7 +7,9 @@ export function Todos({todos}) {
                 return <div>
                     <h1>{todo.name}</h1>
                     <h2>{todo.description}</h2>
-                    <button>{todo.completed == true ? "Completed" : "Mark as completed"}</button>
+                    <button onClick={(event) => {
+                        alert(event.target)
+                    }}>{todo.completed == true ? "Completed" : "Mark as completed"}</button>
                 </div>
             })}
         </div>

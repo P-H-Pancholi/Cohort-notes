@@ -1,8 +1,10 @@
 const { getTodoSchema, todoSchema } = require('./types')
 const { todos } = require('./db')
 const express = require('express')
+const cors = require('cors')
 const app = express()
 
+app.use(cors()) //removes cors error, let frontend allow to hit backend
 app.use(express.json())
 
 app.get('/todos', async (req, res) => {
