@@ -39,3 +39,19 @@ whenever defining a comp, you can take children as input, if that component is c
 // children 
 <div>I am children of component </div>
 </component>
+---------------------------------------------------------------------------
+Hooks (functions that starts with use)
+- Allows you to hook into React state
+e.g useState()
+
+useEffect() : when a component mounts(1st time it renders), use this. Serves same purpose as componentDidMount, ComponentDidUpdate, componentWillUnmount, in react class components
+
+Side effects : Things that are not part of func scope of react component. e.g. fetch, setInterval. shouldn't be done during rendering
+
+useEffect lets you perform side effects.
+
+useMemo : run something when a particular varible changes (depedency array), lets you cache the result of a calculation between re-renders.
+
+useCallback : used to memoize functions, child func depends on referencial equality for rerenders, useCallback prevents unnecessary rerenders.
+
+whenever rerender happens function changes referencially even though it is same.
