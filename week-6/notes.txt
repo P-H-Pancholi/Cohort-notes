@@ -54,4 +54,12 @@ useMemo : run something when a particular varible changes (depedency array), let
 
 useCallback : used to memoize functions, child func depends on referencial equality for rerenders, useCallback prevents unnecessary rerenders.
 
+useRef : Access DOM elements, gets reference to DOM elements. Need access a variable accross re-renders
+
 whenever rerender happens function changes referencially even though it is same.
+
+React.memo(compfunc) : whenever inputs to the component(props) are unchanged, do not rerendern the component.
+------------------------------------------------------------------------------------------------------------------------------------
+Custom hooks must start with use*
+
+e.g. useTodos
