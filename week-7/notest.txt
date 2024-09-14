@@ -1,0 +1,56 @@
+Single page application: 
+
+- React lets you create Single page application. javascript html files comes in first go itself, then you change the view based on client side routing.
+React does not do hard reload
+
+Client side bundle:
+- Client side bundle is the bundle that you get from backend (html, css, js)
+
+How to do routing in react ?
+
+- react-router-dom (https://reactrouter.com)
+
+useNavigate() hook:
+
+Makes sure you're not doing hard reload, right way to switch page from one to another. You cannot use useNavigate inside a component that is not inside BrowserRouter.
+
+Lazy Loading:
+
+The website may have 20 pages, if a person goes to 1 page why ship 20 pages, incrementaly give the website.
+We need to wrap the lazy component wil Suspense tag.
+Suspense API is used for async component/data fetching. If component is suspended, fallback will be rendered
+
+----------------------------------------------------------------------------------------------------------------------------
+Prop drilling:
+
+Pushing down properties to child is called prop drilling, makes code highly unreadable. It just means the syntactic uneasiness when writing code.
+Nothing to do with re-renders (react.dev/learn/passing-data-deeply-with-context)
+
+Solution : Context API
+
+If you use context api, lets you keep all state logic outside core react component
+
+Wrap the components that want to use that props under the created context provider.
+Create context using createContext() & use context using useContext(<context>)
+
+Problem : using context api all the component under provider re-render even if the state var does not change.
+Solution : state management api.
+
+Recoil: state management library
+
+Has a concept of an atom. atom can be defined outside the component, can be teleported to any component.
+atom is similar to useState()
+
+create atom using recoil.atom({ key: <unique>, default})
+to get only atom value : useRecoilValue,
+to get only method to update atom value: useSetRecoilState,
+to get both like useState() : useRecoilState.
+Wrap inside RecoilRoot to use recoil logic.
+
+useState vs atom 
+
+use useState when we need to declare & use state var under one component
+for global var use atom
+
+selector : represents a peice of derived state.
+Derived state : output of passing state to a pure function that derives a new value from the said state.
