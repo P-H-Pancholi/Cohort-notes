@@ -35,7 +35,7 @@ Create context using createContext() & use context using useContext(<context>)
 
 Problem : using context api all the component under provider re-render even if the state var does not change.
 Solution : state management api.
-
+-------------------------------------------------------------------------------------------------------------------------
 Recoil: state management library
 
 Has a concept of an atom. atom can be defined outside the component, can be teleported to any component.
@@ -54,3 +54,17 @@ for global var use atom
 
 selector : represents a peice of derived state.
 Derived state : output of passing state to a pure function that derives a new value from the said state.
+---------------------------------------------------------------------------------
+Asynchronous data queries
+
+selectors cam be used as one way to incorporate async data into the recoil data-flow graph.
+get function of selector can be async
+
+AtomFamily
+
+Can fetch a atom based on parameter passed. 
+dynamically create & delete family members
+default can be function, returns family member as per parameter.
+atomFamily returns a function
+
+selectorFamily is used to get data Asynchronous for a atomFamily
